@@ -7,10 +7,10 @@ def fib(n):
     print()
 fib(1000)
 
-
-while True: 
+#отработка ошибки ввода
+while True:      
     try:
-        fib(int(input('Величина последоовательности: '))) 
+        fib(int(input('Величина последоовательности фибоначи: '))) 
         print('Ok...')
     except ValueError: 
         print('Не то пальто')
