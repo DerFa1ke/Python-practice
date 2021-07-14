@@ -7,6 +7,7 @@ def fib(n):
     print()
 fib(1000)
 
+
 #отработка ошибки ввода
 while True:      
     try:
