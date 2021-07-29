@@ -1,12 +1,14 @@
-#пример 1 
+#пример с сайта питона 
 def fib(n):
+    """
+    Выводит строку с последовательностью Фибоначи в пределе N значения
+    """
     a, b = 0, 1
     while a < n :
         print(a, end=' ')
         a, b = b, a+b 
     print()
-fib(1000)
-print()
+
 
 #отработка ошибки ввода
 while True:      
@@ -18,24 +20,4 @@ while True:
     else:
         print('Done')
         break
-
-
-
-
-
-
-
-
-
-
-# #пример 2 
-# fruits = ['Banana', 'Apple', 'Lime']
-# loud_fruits = [fruits.upper() for fruits in fruits]
-# print(loud_fruits)
-# print(list(enumerate(fruits)))
-
-# #пример 4 
-# print("Hello, I'm Python!")
-# name = input('Type ur name\n') 
-# print('Hi, %s.' % name)
 
