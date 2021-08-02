@@ -8,29 +8,24 @@ def test(stroka):
     Фунциия проверяет валидность последовательности скобочек в строке. 
     Возвращает логическую переменную. 
     """
-    # for i in range(0, len(stroka)) :    
-    #     #Ошибка ввода недопустимых символов 
-    #     if i != ('[', ']', '(', ')', '{', '}') :
-    #         print('Недопустимый символ')
-    #         return(False)
+    stack = [] 
+    brackets = {
+        ')': '(',
+        ']': '[',
+        '}': '{'
+    }
 
-    if len(stroka)%2==1 :
-        #Нечетное количество символов это сразу нехорошо
-        print('Последовательность невалидна.')
-        return(False) 
-
-    
-
-
-
+    for i in range(len(stroka)) :
+        current = stroka[i]
+        if (isClosedBracket(current)) :
+            if brackets[current] != stack.pop() :
+                return(False)
+        else :
+            stack.append(current)
 
 
-#Ввод с отработкой ошибки  
-while True:
-    try: 
-        print(test(input('Введите строку, состоющую из (){}[] симполов: ')))
-    except ValueError:
-        print('В строке недопустимые символы, пробуем еще...')
-    else: 
-        print('Готово...')
-        break
+def isClosedBracket(simvol) :
+    if (simvol.find(')', ']', '}')) > -1 :
+        return(simvol.find(')',']','}'))
+
+print(test(input('Введите строку из символов [] {} (): ')))
